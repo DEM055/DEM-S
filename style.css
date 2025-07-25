@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* фон со значками $ */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dollar {
+  position: absolute;
+  font-size: 120px;
+  color: rgba(0, 128, 0, 0.07);
+  animation: float 20s linear infinite;
+}
+
+/* случайные позиции */
+.dollar:nth-child(1) { top: 10%; left: 15%; }
+.dollar:nth-child(2) { top: 30%; left: 60%; }
+.dollar:nth-child(3) { top: 50%; left: 30%; }
+.dollar:nth-child(4) { top: 70%; left: 75%; }
+.dollar:nth-child(5) { top: 80%; left: 10%; }
+.dollar:nth-child(6) { top: 20%; left: 85%; }
+
+/* лёгкая анимация для движения */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-20px) rotate(360deg); }
+}
+
+/* основной контент */
+.content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+/* логотип */
+.logo {
+  width: 160px;
+  height: auto;
+  margin-top: 30px;
+}
+
+/* кнопка */
+.telegram-button {
+  background-color: #005c2e;
+  color: white;
+  text-decoration: none;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  transition: background 0.3s ease;
+}
+
+.telegram-button:hover {
+  background-color: #007d3b;
+}
